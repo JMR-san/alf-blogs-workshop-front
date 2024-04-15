@@ -2,25 +2,26 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const connectDb = require('./config/db');
-const { errorHandler } = require('./middleware/errorMiddleware')
+//const { message } = require('statuses');
+const { errorHandler } = require('./middleware/errorMiddleware');
 
-
+//connecting to database
 connectDb();
 
 // Serve static files from the public directory
-app.use(express.static('public'))
+app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.status(200).json({message: "Hello AWSCC"});
+app.get('/AWS', (req, res) => {
+    res.status(200).json({ message: 'HELLO AWSCC'});
 })
 
-// Post Routes
-const postRouter = require('./routers/postRouter')
-app.use('/posts', postRouter)
+// Post Routers
+const postRouter = require('./routers/postRouter');
+app.use('/posts', postRouter);
 
-// Use Error Middleware
+// User Error Middleware
 app.use(errorHandler)
 
-app.listen(8081, () => {
-    console.log('Server is running in port 8081');
-});
+app.listen(8080, () => {
+    console.log('Server is running in port 8080');
+})
