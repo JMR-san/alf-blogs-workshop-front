@@ -21,6 +21,6 @@ app.use('/posts', postRouter)
 // Use Error Middleware
 app.use(errorHandler)
 
-app.listen(8080, () => {
-    console.log('Server is running in port 8080');
+app.listen(8081, () => {
+    console.log('Server is running in port 8081');
 });
