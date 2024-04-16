@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-
 import "../styles/Button.css";
 
 const Button = ({ active, variant, size, className, children, ...props }) => {

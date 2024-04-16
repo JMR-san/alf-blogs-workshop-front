@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { IoCloseCircle } from "react-icons/io5";
