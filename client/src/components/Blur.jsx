@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from "react";
 import "../styles/Blur.css";
 
 const Blur = ({ h, w, bg, x, y, opacity, blur, translate_x, translate_y, border_radius }) => {

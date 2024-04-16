@@ -2,8 +2,13 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const connectDb = require('./config/db');
+const cors = require('cors')
 //const { message } = require('statuses');
 const { errorHandler } = require('./middleware/errorMiddleware');
+
+app.use(cors({
+    origin: 'http://localhost:5173'
+  }));
 
 //connecting to database
 connectDb();
