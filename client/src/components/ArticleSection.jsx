@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "../styles/ArticleSection.css";
 import Button from "./Button";
+import Blur from "./Blur";
 import CardsContainer from "./CardsContainer";
 import Searchbar from "./Searchbar";
 import RegularCard from "./RegularCard";
@@ -55,15 +56,39 @@ const ArticleSection = () => {
 
     return (
         <div id="articleSection">
-            <div className="article-sec-heading-container">
-                <p className="article-sec-heading">Learn About Everything Tech!</p>
-                <p className="article-sec-subheading">brought to you by AWSCC Department of Software and Web Development</p>
-            </div>
-            {cards.length > 0 &&
-            <div className="article-top-container">
-                <Button variant={"primary"}>Create Article</Button>
-                <Searchbar searchText={searchText} setSearchText={handleCardSearch}/>
-            </div>
+            <Blur
+                h={"60%"}
+                w={"45%"}
+                bg={"#7000FF"}
+                x={"0"}
+                y={"25%"}
+                opacity={0.15}
+                blur={"400px"}
+                translate_x={"-50%"}
+                translate_y={"-50%"}
+                border_radius={"100%"}
+            />
+            <Blur
+                h={"50%"}
+                w={"35%"}
+                bg={"#60FFE7"}
+                x={"80%"}
+                y={"80%"}
+                opacity={0.15}
+                blur={"400px"}
+                translate_x={"-50%"}
+                translate_y={"-50%"}
+                border_radius={"100%"}
+            />
+                <div className="article-sec-heading-container">
+                    <p className="article-sec-heading">Learn About Everything Tech!</p>
+                    <p className="article-sec-subheading">brought to you by AWSCC Department of Software and Web Development</p>
+                </div>
+                {cards.length > 0 &&
+                <div className="article-top-container">
+                    <Button variant={"primary"}>Create Article</Button>
+                    <Searchbar searchText={searchText} setSearchText={handleCardSearch}/>
+                </div>
             }
             <CardsContainer isEmpty={cards.length === 0} filterResult={searchResult} searchText={searchText}/>
         </div>
